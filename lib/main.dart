@@ -34,21 +34,22 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
         title: 'Testing background distance',
         home: Scaffold(
+            bottomNavigationBar: BottomNavigationBar(
+                items: items, currentIndex: currentIndex, onTap: onTap),
+            // body: bodyList[currentIndex],
             body: Stack(
               children: [
+                Opacity(
+                  opacity: currentIndex == 0 ? 1.0 : 0.01,
+                  child: bodyList[0],
+                ),
                 Opacity(
                   opacity: currentIndex == 1 ? 1.0 : 0.0,
                   child: bodyList[1],
                 ),
                 Opacity(
-                  opacity: currentIndex == 0 ? 1.0 : 0.01,//Notice how this is not 0. A 0 opacity leaves ARkit not running in the background
-                  child: bodyList[0],
-                ),
-                RaisedButton(
-                    onPressed: () {
-                      onTap(1-currentIndex);// Navigate back to first route when tapped.
-                    },
-                    child: Text('Go back!'),
+                  opacity: currentIndex == 2 ? 1.0 : 0.0,
+                  child: bodyList[2],
                 ),
               ],
             )));

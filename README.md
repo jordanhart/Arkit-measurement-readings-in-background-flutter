@@ -1,4 +1,3 @@
-# arkit_background_not_working
+# Arkit in Background on flutter
 
-Instructions show background arkit with offscreen visibility / offstage function is not working
-Run iOS app, watch print statements, toggle between home and other screen.
+Instructions show background arkit reading measurements while in the background / when other tabs are active. The hack used is keeping the Arkit widget with a small opacity
